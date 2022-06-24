@@ -10,18 +10,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Random rand = new Random();//instance of random class
-        int upperbound = 99;//Generates values 0-99
-        int randomNumber = rand.nextInt(upperbound); //Shows what the random number generated
-        int guess;
+        int upperbound = 9;//Generates values 0-99
+        int randomNumber = rand.nextInt(upperbound);//Shows what the random number generated
+        int guessedCounter = 0;
         int count = 0;
+        System.out.println(randomNumber);
+
         while (randomNumber != 0) {
             System.out.println("Guess the NUMBER 1-99: ");
-            Integer guessedNumber = Integer.valueOf(input.nextLine());
-            String name = input.nextLine();
-            guessedNumber = count ++;
-            if (randomNumber > guessedNumber) {
+            int guessedNumber = input.nextInt();
+            guessedCounter = count++;
+
+            if (guessedNumber < randomNumber) {
                 System.out.println("Too Small");
-            } else if (randomNumber < guessedNumber) {
+            }else if (guessedNumber > randomNumber) {
                 System.out.println("Too Big");
             }else {
                 System.out.println("Correct Guess");
