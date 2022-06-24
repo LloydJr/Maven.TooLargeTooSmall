@@ -9,20 +9,25 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Guess the NUMBER: ");
-        Integer y = Integer.valueOf(input.nextLine());
         Random rand = new Random();//instance of random class
-        int upperbound = 9;//Generates values 0-9
-        int x = rand.nextInt(upperbound); //Shows what the random number generated
-        System.out.println("The random number: " + x);
-        if (x > y) {
-            System.out.println("Too Small");
-        }
-        else if (x == y) {
-            System.out.println("Correct Guess");
-        }
-        else if (x < y) {
+        int upperbound = 99;//Generates values 0-99
+        int randomNumber = rand.nextInt(upperbound); //Shows what the random number generated
+        int guess;
+        int count = 0;
+        while (randomNumber != 0) {
+            System.out.println("Guess the NUMBER 1-99: ");
+            Integer guessedNumber = Integer.valueOf(input.nextLine());
+            String name = input.nextLine();
+            guessedNumber = count ++;
+            if (randomNumber > guessedNumber) {
+                System.out.println("Too Small");
+            } else if (randomNumber < guessedNumber) {
                 System.out.println("Too Big");
-                }
+            }else {
+                System.out.println("Correct Guess");
+                break;
+            }
+            System.out.println("Number of guesses:"+count);
+        }
     }
-    }
+}
