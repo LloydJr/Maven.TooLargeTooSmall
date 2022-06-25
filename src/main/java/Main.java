@@ -10,14 +10,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Random rand = new Random();//instance of random class
-        int upperbound = 9;//Generates values 0-99
+        int upperbound = 99;//Generates values 0-99
         int randomNumber = rand.nextInt(upperbound);//Shows what the random number generated
         int guessedCounter = 0;
         int count = 0;
-        System.out.println(randomNumber);
 
         while (randomNumber != 0) {
-            System.out.println("Guess the NUMBER 1-99: ");
+            System.out.println("Guess a NUMBER 1-99: ");
             int guessedNumber = input.nextInt();
             guessedCounter = count++;
 
